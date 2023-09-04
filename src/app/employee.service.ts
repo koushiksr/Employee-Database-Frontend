@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class EmployeeService {
-  private baseUrl = 'http://localhost:5000/employee'; // Express server URL
+  private baseUrl = 'https://employeedb-trll.onrender.com/employee'; // Express server URL
 
   constructor(private http: HttpClient) { }
 

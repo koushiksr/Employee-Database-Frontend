@@ -1,6 +1,7 @@
 {
   "name": "src",
   "version": "0.0.0",
+  "proxy":"https://employeedb-trll.onrender.com",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
