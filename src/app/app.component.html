@@ -174,7 +174,15 @@
               <label for="searchCriteria">Search by:</label>
               <select id="searchCriteria" [(ngModel)]="selectedSearchCriteria">
                 <option value="email">Email</option>
-                <option value="joiningDate">Date of Joining</option>
+                <option value="joiningDate">joiningDate</option>
+                <option value="employeeId">Employee id</option>
+                <option value="firstName">First Name</option>
+                <option value="lastName">Last Name</option>
+                <option value="position">Position</option>
+                <option value="department">Department</option>
+                <!-- <option value="salary">Salary</option>
+                <option value="experience">Experience</option> -->
+                <option value="createdDate">createdDate</option>
               </select>
             </div>
             <div>
@@ -198,7 +206,7 @@
                     <th>Joining Date</th>
                     <th>Experience</th>
                     <th>Created Date</th>
-                    <th>Actions</th>
+                    <!-- <th>Actions</th> -->
                   </tr>
                 </thead>
                 <tbody>
@@ -213,10 +221,10 @@
                     <td>{{ result.joiningDate }}</td>
                     <td>{{ result.experience }}</td>
                     <td>{{ result.createdDate }}</td>
-                    <td class="actions">
+                    <!-- <td class="actions">
                       <button class="actionbuttons" (click)="editEmployee(result.email)">Edit</button>
                       <button class="actionbuttons" (click)="deleteEmployee(result.email)">Delete</button>
-                    </td>
+                    </td> -->
 
                   </tr>
                 </tbody>

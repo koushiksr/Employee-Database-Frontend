@@ -178,6 +178,24 @@ export class EmployeeComponent implements OnInit {
         return employee.email.toLowerCase().includes(this.searchText.toLowerCase());
       case 'joiningDate':
         return employee.joiningDate.includes(this.searchText);
+      case 'employeeId':
+        return employee.employeeId.toLowerCase().includes(this.searchText.toLowerCase());
+      // case 'joiningDate':
+      //   return employee.joiningDate.includes(this.searchText);
+      case 'firstName':
+        return employee.firstName.toLowerCase().includes(this.searchText.toLowerCase());
+      case 'lastName':
+        return employee.lastName.toLowerCase().includes(this.searchText.toLowerCase());
+      case 'position':
+        return employee.position.includes(this.searchText);
+      case 'department':
+        return employee.department.includes(this.searchText);
+      // case 'salary':
+      //   return employee.salary.includes(this.searchText);
+      // case 'experience':
+      //   return employee.experience.includes(this.searchText);
+      case 'createdDate':
+        return employee.createdDate.includes(this.searchText);
       // Add more cases for other criteria
       default:
         return false;
@@ -210,7 +228,6 @@ export class EmployeeComponent implements OnInit {
     });
   }
 
-  // Function to compare alphanumeric values
   compareAlphanumeric(valueA: any, valueB: any): number {
     const numericA = parseInt(valueA.match(/\d+/)[0]);
     const numericB = parseInt(valueB.match(/\d+/)[0]);
@@ -299,12 +316,6 @@ export class EmployeeComponent implements OnInit {
       console.log(data)
     });
   }
-
-  // combineloadAllEmployeesAndOpenPopup() {
-  //   this.openPopup();
-  //   this.loadAllEmployees();
-  // }
-
   loadAllEmployees() {
     this.employeeService.getAllWithoutPaginationEmployees().subscribe((data: any) => {
       this.allEmployeesWithoutPagination = data;
@@ -350,6 +361,7 @@ export class EmployeeComponent implements OnInit {
     this.validationEmail(true)
     this.email = email;
     const objectsWithEmail = this.employees.find(obj => obj.email == email);
+    console.log("object update email")
     console.log(objectsWithEmail)
 
     this.form.setValue({
@@ -358,9 +370,9 @@ export class EmployeeComponent implements OnInit {
       email: objectsWithEmail.email || '',
       position: objectsWithEmail.position || '',
       department: objectsWithEmail.department || '',
-      experience: objectsWithEmail.experience || 0,
+      experience: objectsWithEmail.experience || "",
       joiningDate: objectsWithEmail.joiningDate || '',
-      salary: objectsWithEmail.salary || 0,
+      salary: objectsWithEmail.salary || "",
       // createdDate: objectsWithEmail.createdDate || '',
       // employeeId: objectsWithEmail.employeeId || '',
     })
