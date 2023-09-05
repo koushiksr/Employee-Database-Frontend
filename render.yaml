@@ -1,0 +1,19 @@
+# render.yaml
+
+services:
+  - name: web
+    type: web
+    buildCommand: npm run build
+    publishDir: ./dist
+    startCommand: npm start
+    env:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: 18.17.1 # Set your desired Node.js version, e.g., 14.x.x
+      - key: NG_CLI_VERSION
+        value: 16.2.0 # Set your desired Angular CLI version, e.g., 12.x.x
+    healthCheckPath: /health
+    routes:
+      - path: /*
+        healthCheck: true
