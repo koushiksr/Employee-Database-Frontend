@@ -10,9 +10,9 @@ services:
       - key: NODE_ENV
         value: production
       - key: NODE_VERSION
-        value: 18.17.1 # Set your desired Node.js version, e.g., 14.x.x
+        value: 18.17.1 
       - key: NG_CLI_VERSION
-        value: 16.2.0 # Set your desired Angular CLI version, e.g., 12.x.x
+        value: 16.2.0
     healthCheckPath: /health
     routes:
       - path: /*
