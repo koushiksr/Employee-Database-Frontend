@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist",
+            "outputPath": "dist/src",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -67,7 +67,6 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "outputPath": "dist",
             "browserTarget": "src:build"
           }
         },
