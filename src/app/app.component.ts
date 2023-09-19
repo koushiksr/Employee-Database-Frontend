@@ -50,6 +50,7 @@ export class EmployeeComponent implements OnInit {
     this.isPopUpOfAddEmployee = true;
   }
   closePopUpOfEditEmployee(email: string) {
+    this.clearForm();
     this.editEmployee(email)
     this.isPopUpOfAddEmployee = false;
   }

@@ -6,7 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class EmployeeService {
-  private baseUrl = 'https://employeedb-trll.onrender.com/employee'; // Express server URL
+  private baseUrl = 'https://employeedb-zj5g.onrender.com/employee'; // Express server URL
+  // private baseUrl =  'http://localhost:5000/employee'; // Express server URL
 
   constructor(private http: HttpClient) { }
 
@@ -14,8 +15,9 @@ export class EmployeeService {
     return this.http.post(`${this.baseUrl}/create`, employeeData, this.getHeaders());
   }
 
-  getAllEmployees(currentPage: number,itemsPerPage: number): Observable<any> {
+  getAllEmployees(currentPage: number, itemsPerPage: number): Observable<any> {
     // ?page=${this.currentPage}&pageSize=${this.itemsPerPage}
+    // console.log(this.http.get('https://employeedb-zj5g.onrender.com/employee/getall', this.getHeaders()), "callin online bacend")
     return this.http.get(`${this.baseUrl}/getall?page=${currentPage}&pageSize=${itemsPerPage}`, this.getHeaders());
   }
   getAllWithoutPaginationEmployees(): Observable<any> {
